@@ -71,6 +71,19 @@ func Tokenize(input string) ([]token_type.Token, error) {
 				tokens = append(tokens, token_type.Token{Type: token_type.NotEqual, Value: "!="})
 				continue
 			}
+		case '-':
+			if nextChar() == '-' {
+				subtract(2) // consume ' -- '
+				for len(src) > 0 && src[0] != '\n' {
+					subtract(1)
+					if len(src) <= 0 {
+						break
+					}
+				}
+			}
+		case ';':
+			subtract(1) // consume ';'
+			tokens = append(tokens, token_type.Token{Type: token_type.SemiColon, Value: ";"})
 		case '>':
 			if nextChar() == '=' {
 				subtract(2) // consume '>='

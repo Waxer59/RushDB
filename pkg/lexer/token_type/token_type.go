@@ -24,6 +24,7 @@ const (
 	// Grouping
 	LeftParen  // (
 	RightParen // )
+	SemiColon  // ;
 
 	// Comparison operators
 	EqualEqual   // ==

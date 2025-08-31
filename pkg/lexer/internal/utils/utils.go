@@ -87,7 +87,7 @@ func IsAlpha(char rune) bool {
  * 	SecondReturn: Is the keyword valid
  */
 func IsKeyword(src string) (token_type.TokenType, bool) {
-	keywordType, ok := token_type.KEYWORDS[src]
+	keywordType, ok := token_type.KEYWORDS[strings.ToLower(src)]
 
 	return keywordType, ok
 }
