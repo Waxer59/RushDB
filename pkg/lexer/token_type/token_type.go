@@ -20,6 +20,11 @@ const (
 	Table
 	Select
 	From
+	Drop
+	Insert
+	Update
+	Delete
+	Alter
 
 	// Grouping
 	LeftParen  // (
@@ -45,6 +50,11 @@ var KEYWORDS = map[string]TokenType{
 	"create": Create,
 	"table":  Table,
 	"select": Select,
+	"drop":   Drop,
+	"insert": Insert,
+	"update": Update,
+	"delete": Delete,
+	"alter":  Alter,
 	"from":   From,
 	"null":   Null,
 	"true":   Boolean,

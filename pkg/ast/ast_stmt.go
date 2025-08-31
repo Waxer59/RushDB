@@ -7,8 +7,8 @@ type Stmt interface {
 }
 
 type Program struct {
-	Kind ast_types.NodeType
-	Body []Stmt
+	Kind       ast_types.NodeType
+	Statements []Stmt
 }
 
 func (p Program) GetKind() ast_types.NodeType {
