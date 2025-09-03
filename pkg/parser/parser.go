@@ -24,8 +24,8 @@ func (p *Parser) ProduceAST(input string) (*ast.Program, error) {
 	}
 
 	program := ast.Program{
-		Kind: ast_types.Program,
-		Body: []ast.Stmt{},
+		Kind:       ast_types.Program,
+		Statements: []ast.Stmt{},
 	}
 
 	for p.notEOF() {
@@ -35,7 +35,7 @@ func (p *Parser) ProduceAST(input string) (*ast.Program, error) {
 			return nil, err
 		}
 
-		program.Body = append(program.Body, stmt)
+		program.Statements = append(program.Statements, stmt)
 	}
 
 	return &program, nil
